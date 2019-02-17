@@ -112,7 +112,7 @@ static int piton_sd_init(void)
     pth = (gpt_pth_t *)lba_buf;
 
     piton_sd_rw(PITON_SD_READ, lba_buf, pth->partition_entries_lba, PITON_SD_BLOCK_SIZE);
-    partition = *((partition_entries_t *)lba_buf);
+    partition = ((partition_entries_t *)lba_buf)[1]; // read partition 2
 
     // register device
     result = register_blkdev(piton_sd_major, piton_sd_name);
