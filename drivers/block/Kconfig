@@ -395,6 +395,12 @@ config OPENSPARC_RAMDISK
 
 	  If you aren't running on an OpenSPARC T1 FPGA Platform, say no.
 
+config OPENPITON_ARIANE_RAMDISK
+    tristate "OpenPiton+Ariane FPGA SD ramdisk device driver"
+    default n
+    help
+        Support for the ramdisk for OpenPiton+Ariane running on FPGA booting from SD card.
+
 source "drivers/s390/block/Kconfig"
 
 config XILINX_SYSACE
